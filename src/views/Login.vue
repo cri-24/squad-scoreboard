@@ -1,7 +1,6 @@
 <template>
   <div class="login-page">
     <div class="form-container">
-      <h2>Accedi</h2>
       <LoginForm />
     </div>
   </div>
@@ -10,28 +9,20 @@
 <script setup>
 import LoginForm from '@/components/LoginForm.vue';
 </script>
-<style>
+
+<style scoped>
 .login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f8f9fa;
+  background-color: #e0f7fa; /* Celeste chiaro */
 }
 
 .form-container {
-  background-color: #ffffff;
-  padding: 2rem;
+  background-color: #ffffff; /* Bianco per il contenuto del form */
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 100%;
-  max-width: 400px;
-  position: relative;
-}
-
-h2 {
-  color: #007bff; /* Colore vivace per il testo */
-  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 </style>

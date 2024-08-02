@@ -8,7 +8,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="rankingModal" tabindex="-1" aria-labelledby="rankingModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="rankingModalLabel">Classifica</h5>
@@ -58,35 +58,20 @@ const showRanking = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
-  background-color: #f1f3f5;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: auto;
-  position: relative;
 }
 
 .welcome-message {
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-h1 {
-  color: #007bff; /* Colore vivace per il testo */
-  margin-bottom: 1rem;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+.modal-content {
   border-radius: 8px;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #004085;
 }
 </style>
