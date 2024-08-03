@@ -1,28 +1,30 @@
 <template>
   <div class="login-page">
     <div class="form-container">
-      <LoginForm />
+      <h2>Accedi</h2>
+      <LoginForm v-if="!nickname" />
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 import LoginForm from '@/components/LoginForm.vue';
+
+const router = useRouter();
+const nickname = ref('');
+
+onMounted(() => {
+  const storedUser = JSON.parse(localStorage.getItem('currentUser'));
+  if (storedUser && storedUser.nickname) {
+    nickname.value = storedUser.nickname;
+    router.push('/home');
+  }
+ 
+});
 </script>
 
 <style scoped>
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #e0f7fa; /* Celeste chiaro */
-}
 
-.form-container {
-  background-color: #ffffff; /* Bianco per il contenuto del form */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 </style>

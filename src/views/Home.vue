@@ -47,7 +47,7 @@ const teams = ref([
 
 onMounted(() => {
   const storedUser = JSON.parse(localStorage.getItem('currentUser'));
-  if (storedUser) {
+  if (storedUser && storedUser.nickname) {
     nickname.value = storedUser.nickname;
   }
 });
@@ -58,20 +58,51 @@ const showRanking = () => {
 };
 </script>
 
-<style scoped>
+<style>
 .home-page {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
+  background-color: #f1f3f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
+  height: 100vh;
 }
 
 .welcome-message {
+  margin-bottom: 2rem;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.modal-content {
+h1 {
+  color: #007bff;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
   border-radius: 8px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+@media (max-width: 600px) {
+  .home-page {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
 }
 </style>
