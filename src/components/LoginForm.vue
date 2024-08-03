@@ -52,13 +52,13 @@ const handleSubmit = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(139, 191, 255, 0.922);
+  background-color: #95caff;
   z-index: 1;
   pointer-events: none;
 }
 
 .form-container {
-  background-color: #ffffff;
+  background-color: #e9f4ff;
   padding: 1rem;
   border-radius: 16px; /* Arrotonda gli angoli */
   text-align: center;
