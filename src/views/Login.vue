@@ -1,5 +1,11 @@
 <template>
   <div class="login-page">
+    <!-- Topbar -->
+    <nav class="navbar navbar-dark bg-dark topbar fixed-top">
+      <div class="container">
+        <span class="navbar-brand mx-auto">S'App Secondo</span>
+      </div>
+    </nav>
     <div class="form-container">
       <LoginForm v-if="!username" />
     </div>
@@ -35,6 +41,29 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.bg-dark{
+  background-color: #01478d;
+}
+
+/* Topbar */
+.topbar {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 0.5rem;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 
 </style>
