@@ -15,12 +15,12 @@ import TeamModal from '@/components/TeamModal.vue';
 import squadImage from '@/assets/squad.jpg';
 
 const teams = ref([
-  { name: 'Squadra con nome molto molto lungo', image: squadImage, members: ['Player1', 'Player2'] },
-  { name: 'sq2', image: squadImage, members: ['Player3', 'Player4'] },
-  { name: 'sq3', image: squadImage, members: ['Player5', 'Player6'] },
-  { name: 'sq4', image: squadImage, members: ['Player7', 'Player8'] },
-  { name: 'sq5', image: squadImage, members: ['Player9', 'Player10'] },
-  { name: 'sq6', image: squadImage, members: ['Player11', 'Player12'] }
+  { name: 'Squadra 1', image: squadImage, members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'] },
+  { name: 'Squadra 2', image: squadImage, members: ['Player3', 'Player4', 'Player3', 'Player4', 'Player5'] },
+  { name: 'Squadra 3', image: squadImage, members: ['Player5', 'Player6', 'Player3', 'Player4', 'Player5'] },
+  { name: 'Squadra 4', image: squadImage, members: ['Player7', 'Player8', 'Player3', 'Player4', 'Player5'] },
+  { name: 'Squadra 5', image: squadImage, members: ['Player9', 'Player10', 'Player3', 'Player4', 'Player5'] },
+  { name: 'Squadra 6', image: squadImage, members: ['Player11', 'Player12', 'Player3', 'Player4', 'Player5'] }
 ]);
 
 const selectedTeam = ref(null);

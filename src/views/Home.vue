@@ -68,12 +68,12 @@ const currentButton = ref('squadre'); // Imposta 'squadre' come il bottone inizi
 const router = useRouter();
 
 const teams = ref([
-  { name: 'Squadra con un nome molto lungo 1', members: ['Player1', 'Player2'], score: 100 },
-  { name: 'Squadra 2', members: ['Player3', 'Player4'], score: 90 },
-  { name: 'Squadra 3', members: ['Player5', 'Player6'], score: 80 },
-  { name: 'Squadra 4', members: ['Player7', 'Player8'], score: 70 },
-  { name: 'Squadra 5', members: ['Player9', 'Player10'], score: 60 },
-  { name: 'Squadra 6', members: ['Player11', 'Player12'], score: 50 }
+  { name: 'Squadra 1', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 100 },
+  { name: 'Squadra 2', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 90 },
+  { name: 'Squadra 3', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 80 },
+  { name: 'Squadra 4', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 70 },
+  { name: 'Squadra 5', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 60 },
+  { name: 'Squadra 6', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 50 }
 ]);
 
 onMounted(() => {
