@@ -16,12 +16,17 @@ const router = useRouter();
 const nickname = ref('');
 
 onMounted(() => {
-  const storedUser = JSON.parse(localStorage.getItem('currentUser'));
-  if (storedUser && storedUser.nickname) {
-    nickname.value = storedUser.nickname;
-    router.push('/home');
+  console.log("Login page mounted");
+  try {
+    const storedUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log("Stored user:", storedUser);
+    if (storedUser && storedUser.nickname) {
+      nickname.value = storedUser.nickname;
+      router.push('/home');
+    }
+  } catch (error) {
+    console.error("Error reading localStorage:", error);
   }
- 
 });
 </script>
 

@@ -35,8 +35,13 @@ const nickname = ref('');
 const handleSubmit = () => {
   if (nickname.value.trim()) {
     const user = { nickname: nickname.value };
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    router.push('/home');
+    try {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      console.log("User saved:", user);
+      router.push('/home');
+    } catch (error) {
+      console.error("Error saving to localStorage:", error);
+    }
   }
 };
 </script>

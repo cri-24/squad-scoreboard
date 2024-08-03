@@ -46,9 +46,15 @@ const teams = ref([
 ]);
 
 onMounted(() => {
-  const storedUser = JSON.parse(localStorage.getItem('currentUser'));
-  if (storedUser && storedUser.nickname) {
-    nickname.value = storedUser.nickname;
+  console.log("Home page mounted"); // Log per verificare che il onMounted venga eseguito
+  try {
+    const storedUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log("Stored user on home:", storedUser); // Verifica il contenuto del localStorage
+    if (storedUser && storedUser.nickname) {
+      nickname.value = storedUser.nickname;
+    }
+  } catch (error) {
+    console.error("Error reading localStorage on home:", error);
   }
 });
 
