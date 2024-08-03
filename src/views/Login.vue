@@ -1,8 +1,7 @@
 <template>
   <div class="login-page">
     <div class="form-container">
-      <h2>Accedi</h2>
-      <LoginForm v-if="!nickname" />
+      <LoginForm v-if="!username" />
     </div>
   </div>
 </template>
@@ -13,15 +12,15 @@ import { useRouter } from 'vue-router';
 import LoginForm from '@/components/LoginForm.vue';
 
 const router = useRouter();
-const nickname = ref('');
+const username = ref('');
 
 onMounted(() => {
   console.log("Login page mounted");
   try {
     const storedUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log("Stored user:", storedUser);
-    if (storedUser && storedUser.nickname) {
-      nickname.value = storedUser.nickname;
+    if (storedUser && storedUser.username) {
+      username.value = storedUser.username;
       router.push('/home');
     }
   } catch (error) {
@@ -30,6 +29,12 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style>
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 </style>

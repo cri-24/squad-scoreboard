@@ -4,20 +4,19 @@
     <h2 class="text-center mb-4">Benvenuto</h2>
     <form @submit.prevent="handleSubmit">
       <div class="form-group mb-4">
-        <label for="nickname" class="form-label">Nickname</label>
         <input
-          id="nickname"
-          v-model="nickname"
+          id="username"
+          v-model="username"
           type="text"
           class="form-control"
-          placeholder="Inserisci il tuo nickname"
+          placeholder="Inserisci il tuo nome"
           required
         />
       </div>
       <button
         type="submit"
         class="btn btn-primary w-100"
-        :disabled="!nickname.trim()"
+        :disabled="!username.trim()"
       >
         Registrati
       </button>
@@ -30,11 +29,11 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-const nickname = ref('');
+const username = ref('');
 
 const handleSubmit = () => {
-  if (nickname.value.trim()) {
-    const user = { nickname: nickname.value };
+  if (username.value.trim()) {
+    const user = { username: username.value };
     try {
       localStorage.setItem('currentUser', JSON.stringify(user));
       console.log("User saved:", user);
@@ -53,22 +52,23 @@ const handleSubmit = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(139, 191, 255, 0.922);
   z-index: 1;
   pointer-events: none;
 }
 
 .form-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+  padding: 1rem;
+  border-radius: 16px; /* Arrotonda gli angoli */
+  text-align: center;
+  width: 80%; /* Limita la larghezza in percentuale */
+  max-width: 400px; /* Limita la larghezza massima */
+  height: auto; /* Altezza automatica */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 2;
 }
 
@@ -101,6 +101,7 @@ h2 {
 @media (max-width: 600px) {
   .form-container {
     padding: 1rem;
+    width: 90%; /* Aumenta la larghezza per schermi piccoli */
   }
 
   h2 {

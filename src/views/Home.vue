@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
-    <div class="welcome-message" v-if="nickname">
-      <h1>Ciao {{ nickname }}!</h1>
+    <div class="welcome-message" v-if="username">
+      <h1>Ciao {{ username }}!</h1>
     </div>
     <TeamList />
     <button class="btn btn-primary mt-3" @click="showRanking">Mostra Classifica</button>
@@ -34,7 +34,7 @@
 import { ref, onMounted } from 'vue';
 import TeamList from '@/components/TeamList.vue';
 
-const nickname = ref('');
+const username = ref('');
 
 const teams = ref([
   { name: 'sq1', members: ['Player1', 'Player2'] },
@@ -50,8 +50,8 @@ onMounted(() => {
   try {
     const storedUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log("Stored user on home:", storedUser); // Verifica il contenuto del localStorage
-    if (storedUser && storedUser.nickname) {
-      nickname.value = storedUser.nickname;
+    if (storedUser && storedUser.username) {
+      username.value = storedUser.username;
     }
   } catch (error) {
     console.error("Error reading localStorage on home:", error);
@@ -71,7 +71,7 @@ const showRanking = () => {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-color: #f1f3f5;
+  background-color: rgba(139, 191, 255, 0.922);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
@@ -108,7 +108,7 @@ h1 {
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 </style>
