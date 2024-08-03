@@ -56,11 +56,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { useRouter } from 'vue-router';
 import TeamList from '@/components/TeamList.vue';
 import RankingList from '@/components/RankingList.vue';
-import * as bootstrap from 'bootstrap'; // Importa bootstrap correttamente
+import * as bootstrap from 'bootstrap';
 
 const username = ref('');
 const currentButton = ref('squadre'); // Imposta 'squadre' come il bottone inizialmente selezionato
@@ -85,9 +85,24 @@ onMounted(() => {
   } catch (error) {
     console.error("Error reading localStorage on home:", error);
   }
+
+  // Imposta l'evento di chiusura della modale
+  nextTick(() => {
+    const modalElement = document.getElementById('rankingModal');
+    if (modalElement) {
+      modalElement.addEventListener('hidden.bs.modal', () => {
+        currentButton.value = 'squadre'; // Ripristina il pulsante "Squadre" come attivo
+      });
+    }
+  });
 });
 
-const showRanking = () => {
+const navigateTo = (path) => {
+  router.push(path);
+  currentButton.value = 'squadre'; // Imposta il bottone "Squadre" come selezionato
+};
+
+const openRanking = () => {
   const modalElement = document.getElementById('rankingModal');
   if (modalElement) {
     const modal = new bootstrap.Modal(modalElement);
@@ -97,17 +112,8 @@ const showRanking = () => {
     console.error("Modal element not found");
   }
 };
-
-const navigateTo = (path) => {
-  router.push(path);
-  currentButton.value = 'squadre'; // Imposta il bottone "Squadre" come selezionato
-};
-
-const openRanking = () => {
-  showRanking();
-  currentButton.value = 'classifica'; // Aggiorna lo stato del bottone selezionato
-};
 </script>
+
 <style>
 /* Stili della pagina */
 .home-page {
@@ -124,6 +130,10 @@ const openRanking = () => {
   margin-bottom: 60px; /* Margine inferiore per evitare sovrapposizione con il footer */
 }
 
+.bg-dark{
+  background-color: #01478d;
+}
+
 /* Topbar */
 .topbar {
   background-color: #343a40;
@@ -136,10 +146,16 @@ const openRanking = () => {
   right: 0;
   display: flex;
   justify-content: center;
+  flex-direction: column; /* Aggiunge spazio tra il titolo e il saluto */
 }
 
 .navbar-brand {
   font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.welcome-text {
+  font-size: 0.875rem; /* Font size più piccolo per il saluto */
   color: #ffffff;
 }
 
