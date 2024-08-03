@@ -121,13 +121,11 @@ const openRanking = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
   background-color: #f8f9fa;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin: auto;
-  min-height: calc(100vh - 120px); /* Altezza minima per evitare sovrapposizione con il footer */
-  margin-bottom: 60px; /* Margine inferiore per evitare sovrapposizione con il footer */
+  min-height: 100vh; /* Altezza minima per evitare sovrapposizione con il footer */
 }
 
 .bg-dark{
@@ -145,8 +143,8 @@ const openRanking = () => {
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center;
-  flex-direction: column; /* Aggiunge spazio tra il titolo e il saluto */
+  flex-direction: column;
+  align-items: center; /* Assicura che il contenuto della navbar sia centrato */
 }
 
 .navbar-brand {
@@ -166,7 +164,7 @@ const openRanking = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 80px; /* Spazio per la topbar */
+  margin-top: 100px; /* Spazio per la topbar */
   padding: 1rem;
   width: 100%;
 }
