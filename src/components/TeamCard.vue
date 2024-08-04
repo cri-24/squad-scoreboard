@@ -1,5 +1,5 @@
 <template>
-  <div class="team-card" @click="$emit('click')">
+  <div :class="['team-card', { 'highlighted': isUserTeam }]" @click="$emit('click')">
     <div class="team-image">
       <img :src="team.image" alt="Team Image" />
     </div>
@@ -14,6 +14,10 @@ const props = defineProps({
   team: {
     type: Object,
     required: true
+  },
+  isUserTeam: {
+    type: Boolean,
+    default: false
   }
 });
 </script>
@@ -60,5 +64,9 @@ const props = defineProps({
   color: #333; /* Colore del testo della card */
   font-size: 1.2rem;
   margin: 0;
+}
+
+.team-card.highlighted {
+  border: 2px solid #ffd700; /* Bordo giallo per la squadra evidenziata */
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="team-list">
     <div class="card-container">
-      <TeamCard v-for="team in teams" :key="team.name" :team="team" @click="openModal(team)" />
+      <TeamCard v-for="team in orderedTeams" :key="team.name" :team="team" :isUserTeam="team.name === userTeam" @click="openModal(team)" />
     </div>
     <TeamModal v-if="selectedTeam" :team="selectedTeam" @close="selectedTeam = null" />
     <div v-if="selectedTeam" class="overlay" @click="selectedTeam = null"></div>
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import TeamCard from '@/components/TeamCard.vue';
 import TeamModal from '@/components/TeamModal.vue';
 import { useTeamsStore } from '@/store/teams-store'; 
@@ -17,6 +17,25 @@ import { useTeamsStore } from '@/store/teams-store';
 const selectedTeam = ref(null);
 const teamStore = useTeamsStore(); // Usa lo store
 const teams = teamStore.teams; // Ottieni le squadre dallo store
+const userTeam = ref('');
+
+// Recupera la squadra dell'utente dal localStorage
+onMounted(() => {
+  const storedUser = JSON.parse(localStorage.getItem('currentUser'));
+  if (storedUser && storedUser.team) {
+    userTeam.value = storedUser.team;
+  }
+});
+
+// Ordina le squadre in modo che la squadra dell'utente sia la prima
+const orderedTeams = computed(() => {
+  return teams.slice().sort((a, b) => {
+    if (a.name === userTeam.value) return -1;
+    if (b.name === userTeam.value) return 1;
+    return 0;
+  });
+});
+
 const openModal = (team) => {
   selectedTeam.value = team;
 };

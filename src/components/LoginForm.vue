@@ -13,10 +13,16 @@
           required
         />
       </div>
+      <div class="form-group mb-4">
+        <select v-model="selectedTeam" class="form-control" required>
+          <option disabled value="">Seleziona la tua squadra</option>
+          <option v-for="team in teams" :key="team" :value="team">{{ team }}</option>
+        </select>
+      </div>
       <button
         type="submit"
         class="btn btn-primary w-100"
-        :disabled="!username.trim()"
+        :disabled="!username.trim() || !selectedTeam"
       >
         Registrati
       </button>
@@ -27,13 +33,17 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useTeamsStore } from '@/store/teams-store';
 
 const router = useRouter();
 const username = ref('');
+const selectedTeam = ref('');
+const teamStore = useTeamsStore();
+const teams = teamStore.teams.map(team => team.name);
 
 const handleSubmit = () => {
-  if (username.value.trim()) {
-    const user = { username: username.value };
+  if (username.value.trim() && selectedTeam.value) {
+    const user = { username: username.value, team: selectedTeam.value };
     try {
       localStorage.setItem('currentUser', JSON.stringify(user));
       console.log("User saved:", user);
