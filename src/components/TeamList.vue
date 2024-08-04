@@ -12,19 +12,11 @@
 import { ref } from 'vue';
 import TeamCard from '@/components/TeamCard.vue';
 import TeamModal from '@/components/TeamModal.vue';
-import squadImage from '@/assets/squad.jpg';
-
-const teams = ref([
-  { name: 'Squadra 1', image: squadImage, members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'] },
-  { name: 'Squadra 2', image: squadImage, members: ['Player3', 'Player4', 'Player3', 'Player4', 'Player5'] },
-  { name: 'Squadra 3', image: squadImage, members: ['Player5', 'Player6', 'Player3', 'Player4', 'Player5'] },
-  { name: 'Squadra 4', image: squadImage, members: ['Player7', 'Player8', 'Player3', 'Player4', 'Player5'] },
-  { name: 'Squadra 5', image: squadImage, members: ['Player9', 'Player10', 'Player3', 'Player4', 'Player5'] },
-  { name: 'Squadra 6', image: squadImage, members: ['Player11', 'Player12', 'Player3', 'Player4', 'Player5'] }
-]);
+import { useTeamsStore } from '@/store/teams-store'; 
 
 const selectedTeam = ref(null);
-
+const teamStore = useTeamsStore(); // Usa lo store
+const teams = teamStore.teams; // Ottieni le squadre dallo store
 const openModal = (team) => {
   selectedTeam.value = team;
 };

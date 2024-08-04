@@ -61,20 +61,14 @@ import { useRouter } from 'vue-router';
 import TeamList from '@/components/TeamList.vue';
 import RankingList from '@/components/RankingList.vue';
 import * as bootstrap from 'bootstrap';
+import { useTeamsStore } from '@/store/teams-store'; 
 
 const username = ref('');
 const currentButton = ref('squadre'); // Imposta 'squadre' come il bottone inizialmente selezionato
 
 const router = useRouter();
-
-const teams = ref([
-  { name: 'Squadra 1', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 100 },
-  { name: 'Squadra 2', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 90 },
-  { name: 'Squadra 3', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 80 },
-  { name: 'Squadra 4', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 70 },
-  { name: 'Squadra 5', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 60 },
-  { name: 'Squadra 6', members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], score: 50 }
-]);
+const teamStore = useTeamsStore(); // Usa lo store
+const teams = teamStore.teams; // Ottieni le squadre dallo store
 
 onMounted(() => {
   try {
