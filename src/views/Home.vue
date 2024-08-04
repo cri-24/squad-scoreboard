@@ -61,9 +61,10 @@ import { useRouter } from 'vue-router';
 import TeamList from '@/components/TeamList.vue';
 import RankingList from '@/components/RankingList.vue';
 import * as bootstrap from 'bootstrap';
-import { useTeamsStore } from '@/store/teams-store'; 
+import { useTeamsStore } from '@/store/teams-store'; // Importa lo store
 
 const username = ref('');
+const userTeam = ref(''); // Stato per la squadra dell'utente
 const currentButton = ref('squadre'); // Imposta 'squadre' come il bottone inizialmente selezionato
 
 const router = useRouter();
@@ -75,6 +76,7 @@ onMounted(() => {
     const storedUser = JSON.parse(localStorage.getItem('currentUser'));
     if (storedUser && storedUser.username) {
       username.value = storedUser.username;
+      userTeam.value = storedUser.team; // Imposta la squadra dell'utente
     }
   } catch (error) {
     console.error("Error reading localStorage on home:", error);
@@ -109,7 +111,6 @@ const openRanking = () => {
 </script>
 
 <style>
-/* Stili della pagina */
 .home-page {
   display: flex;
   flex-direction: column;
@@ -122,11 +123,10 @@ const openRanking = () => {
   min-height: 100vh; /* Altezza minima per evitare sovrapposizione con il footer */
 }
 
-.bg-dark{
+.bg-dark {
   background-color: #01478d;
 }
 
-/* Topbar */
 .topbar {
   background-color: #343a40;
   color: #ffffff;
@@ -151,7 +151,6 @@ const openRanking = () => {
   color: #ffffff;
 }
 
-/* Contenuto della pagina */
 .content {
   flex: 1;
   display: flex;
@@ -163,13 +162,11 @@ const openRanking = () => {
   width: 100%;
 }
 
-/* Welcome message */
 .welcome-message {
   margin-bottom: 2rem;
   text-align: center;
 }
 
-/* Styling per le card */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adatta automaticamente le colonne */
@@ -189,7 +186,6 @@ const openRanking = () => {
   align-items: center;
 }
 
-/* Footer fisso */
 .footer {
   background-color: #343a40;
   color: #ffffff;
@@ -224,9 +220,7 @@ const openRanking = () => {
   color: #000000;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
-
   .card-container {
     grid-template-columns: 1fr; /* Una colonna su mobile */
   }
