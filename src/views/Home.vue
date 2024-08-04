@@ -158,6 +158,7 @@ const openRanking = () => {
   justify-content: center;
   align-items: center;
   margin-top: 100px; /* Spazio per la topbar */
+  margin-bottom: 80px;
   padding: 1rem;
   width: 100%;
 }
