@@ -18,10 +18,10 @@
         </div>
       </div>
     </div>
-  </template>
+</template>
   
-  <script setup>
-  const props = defineProps({
+<script setup>
+const props = defineProps({
     team: {
       type: Object,
       required: true
@@ -33,9 +33,9 @@
   const closeModal = () => {
     emit('close');
   };
-  </script>
+ </script>
   
-  <style scoped>
+<style scoped>
   .modal-content {
     border-radius: 12px; /* Bordi arrotondati */
     background-color: #ffffff; /* Sfondo della modale bianco */
@@ -53,4 +53,4 @@
   .modal-body li {
     font-family: 'Arial', sans-serif;
   }
-  </style>
+</style>
