@@ -3,13 +3,17 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="teamModalLabel">Dettagli Squadra</h5>
+            <h5 class="modal-title" id="teamModalLabel">Dettagli della squadra</h5>
             <button type="button" class="btn-close" @click="closeModal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <h3>{{ team.name }}</h3>
             <ul>
               <li v-for="member in team.members" :key="member">{{ member }}</li>
+            </ul>
+            <h3>{{ 'Animatori' }}</h3>
+            <ul>
+              <li v-for="leader in team.leaders" :key="leader">{{ leader }}</li>
             </ul>
           </div>
           <div class="modal-footer">
