@@ -19,7 +19,7 @@
           <span class="team-name">{{ team.name }}</span>
         </div>
         <div class="score-container">
-          <span class="badge bg-primary rounded-pill">{{ team.score }}</span>
+          <span class="badge bg-primary rounded-pill">{{ calculateTotalScore(team.details) }}</span>
           <div v-if="showDetails === team.name" class="score-details">
             <div v-for="(detail, game) in team.details" :key="game">{{ game }}: {{ detail }}</div>
           </div>
@@ -57,6 +57,10 @@ const showScoreDetails = (teamName) => {
 const hideScoreDetails = () => {
   showDetails.value = null;
 };
+
+const calculateTotalScore = (details) => {
+  return Object.values(details).reduce((total, score) => total + score, 0);
+};
 </script>
   
   <style scoped>
@@ -77,10 +81,10 @@ const hideScoreDetails = () => {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   top: 50%; /* Centrato verticalmente */
   left: 50%; /* Centrato orizzontalmente */
-  transform: translate(-60%, -50%); /* Centrato esattamente */
+  transform: translate(-70%, -50%); /* Centrato esattamente */
   z-index: 1000;
   max-width: 300px; /* Limita la larghezza per un aspetto più ordinato */
-  width: 110px;
+  width: 145px;
 }
 
 /* Mostra i dettagli quando il mouse è sopra il contenitore del punteggio */
