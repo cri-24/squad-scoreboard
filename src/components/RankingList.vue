@@ -1,45 +1,92 @@
 <template>
-    <div class="ranking-list">
-      <h2 class="text-center mb-4">Classifica</h2>
-      <ul class="list-group">
-        <li 
-          v-for="(team, index) in sortedTeams" 
-          :key="team.name" 
-          :class="['list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', `bg-${index % bgColors.length}`, 'ranking-item']">
-          <div class="d-flex align-items-center team-info">
-            <!-- Icone delle coppe per le prime tre posizioni -->
-            <i v-if="index === 0" class="bi bi-trophy trophy gold me-3"></i>
-            <i v-if="index === 1" class="bi bi-trophy trophy silver me-3"></i>
-            <i v-if="index === 2" class="bi bi-trophy trophy bronze me-3"></i>
-            <!-- Spazio vuoto per le posizioni 1, 2, 3 e numero di posizione per le altre -->
-            <span v-if="index >= 3" class="rank me-4">{{ index + 1 }}</span>
-            <span class="team-name">{{ team.name }}</span>
-          </div>
+  <div class="ranking-list">
+    <h2 class="text-center mb-4">Classifica</h2>
+    <ul class="list-group">
+      <li 
+        v-for="(team, index) in sortedTeams" 
+        :key="team.name" 
+        :class="['list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', `bg-${index % bgColors.length}`, 'ranking-item']"
+        @mouseover="showScoreDetails(team.name)"
+        @mouseleave="hideScoreDetails"
+      >
+        <div class="d-flex align-items-center team-info">
+          <!-- Icone delle coppe per le prime tre posizioni -->
+          <i v-if="index === 0" class="bi bi-trophy trophy gold me-3"></i>
+          <i v-if="index === 1" class="bi bi-trophy trophy silver me-3"></i>
+          <i v-if="index === 2" class="bi bi-trophy trophy bronze me-3"></i>
+          <!-- Spazio vuoto per le posizioni 1, 2, 3 e numero di posizione per le altre -->
+          <span v-if="index >= 3" class="rank me-4">{{ index + 1 }}</span>
+          <span class="team-name">{{ team.name }}</span>
+        </div>
+        <div class="score-container">
           <span class="badge bg-primary rounded-pill">{{ team.score }}</span>
-        </li>
-      </ul>
-    </div>
-  </template>
-  
-  <script setup>
-  import { computed } from 'vue';
-  
-  const props = defineProps({
-    teams: {
-      type: Array,
-      required: true
-    }
-  });
-  
-  const bgColors = ['light', 'secondary', 'success', 'danger', 'warning', 'info'];
-  
-  const sortedTeams = computed(() => {
-    return props.teams.slice().sort((a, b) => b.score - a.score);
-  });
-  </script>
+          <div v-if="showDetails === team.name" class="score-details">
+            <div v-for="(detail, game) in team.details" :key="game">{{ game }}: {{ detail }}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script setup>
+import { computed, ref } from 'vue';
+
+const props = defineProps({
+  teams: {
+    type: Array,
+    required: true
+  }
+});
+
+const bgColors = ['light', 'secondary', 'success', 'danger', 'warning', 'info'];
+
+const sortedTeams = computed(() => {
+  return props.teams.slice().sort((a, b) => b.score - a.score);
+});
+
+// Stato per controllare il team per il quale mostrare i dettagli
+const showDetails = ref(null);
+
+// Mostra i dettagli del punteggio
+const showScoreDetails = (teamName) => {
+  showDetails.value = teamName;
+};
+
+// Nascondi i dettagli del punteggio
+const hideScoreDetails = () => {
+  showDetails.value = null;
+};
+</script>
   
   <style scoped>
-  
+
+  /* Aggiungi uno stile per la contenitore dei punteggi */
+.score-container {
+  position: relative;
+}
+
+/* Aggiungi uno stile per la sezione dei dettagli del punteggio */
+.score-details {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  top: 50%; /* Centrato verticalmente */
+  left: 50%; /* Centrato orizzontalmente */
+  transform: translate(-60%, -50%); /* Centrato esattamente */
+  z-index: 1000;
+  max-width: 300px; /* Limita la larghezza per un aspetto più ordinato */
+  width: 110px;
+}
+
+/* Mostra i dettagli quando il mouse è sopra il contenitore del punteggio */
+.score-container:hover .score-details {
+  display: block;
+}
   .list-group-item {
     min-height: 70px; /* Altezza minima uniforme per tutti gli elementi */
   }
