@@ -47,12 +47,14 @@ const closeModal = () => {
 
 <style scoped>
 .modal-content {
-  border-radius: 12px; /* Bordi arrotondati */
-  background-color: #ffffff; /* Sfondo della modale bianco */
+  font-family: 'Montserrat', sans-serif;
+  width: 700;
+  border-radius: 12px; 
+  background-color: #ffffff; 
 }
 
 .modal-body {
-  color: #333; /* Colore del testo */
+  color: #333; 
 }
 
 .modal-body ul {

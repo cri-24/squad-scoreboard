@@ -2,8 +2,11 @@
   <div class="home-page">
     <!-- Topbar -->
     <nav class="navbar navbar-dark bg-dark topbar fixed-top">
-      <div class="container">
-        <span class="navbar-brand mx-auto">S'App Secondo - T'arvisio quando arvengo 2024</span>
+      <div class="container d-flex justify-content-center align-items-center">
+        <span class="navbar-brand text-center" >
+            S'App Secondo<br>
+            T'arvisio quando arvengo 2024
+        </span>
       </div>
     </nav>
 
@@ -113,6 +116,8 @@ const openRanking = () => {
 <style>
 .home-page {
   display: flex;
+  font-family: 'Montserrat', sans-serif;
+  width: 700;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -142,12 +147,14 @@ const openRanking = () => {
 }
 
 .navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  width: 700;
   font-size: 1.5rem;
   color: #ffffff;
 }
 
 .welcome-text {
-  font-size: 0.875rem; /* Font size più piccolo per il saluto */
+  font-size: 0.875rem; 
   color: #ffffff;
 }
 
@@ -155,24 +162,28 @@ const openRanking = () => {
   flex: 1;
   display: flex;
   flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  width: 700;
   justify-content: center;
   align-items: center;
-  margin-top: 100px; /* Spazio per la topbar */
+  margin-top: 100px;
   margin-bottom: 80px;
   padding: 1rem;
   width: 100%;
 }
 
 .welcome-message {
+  font-family: 'Montserrat', sans-serif;
+  width: 700;
   margin-bottom: 2rem;
   text-align: center;
 }
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adatta automaticamente le colonne */
-  gap: 20px; /* Spazio tra le card */
-  width: 100%; /* Assicura che le card riempiano il contenitore */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px;
+  width: 100%;
 }
 
 .card {

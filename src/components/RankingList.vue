@@ -63,15 +63,13 @@ const calculateTotalScore = (details) => {
 };
 </script>
   
-  <style scoped>
+<style scoped>
 
-  /* Aggiungi uno stile per la contenitore dei punteggi */
-.score-container {
-  position: relative;
-}
+  .score-container {
+    position: relative;
+  }
 
-/* Aggiungi uno stile per la sezione dei dettagli del punteggio */
-.score-details {
+  .score-details {
   display: none;
   position: absolute;
   background-color: #fff;
@@ -85,12 +83,12 @@ const calculateTotalScore = (details) => {
   z-index: 1000;
   max-width: 300px; /* Limita la larghezza per un aspetto più ordinato */
   width: 145px;
-}
+  }
 
-/* Mostra i dettagli quando il mouse è sopra il contenitore del punteggio */
-.score-container:hover .score-details {
-  display: block;
-}
+  .score-container:hover .score-details {
+    display: block;
+  }
+
   .list-group-item {
     min-height: 70px; /* Altezza minima uniforme per tutti gli elementi */
   }
