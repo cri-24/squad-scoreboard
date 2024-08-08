@@ -3,7 +3,7 @@
     <!-- Topbar -->
     <nav class="navbar navbar-dark bg-dark topbar fixed-top">
       <div class="container">
-        <span class="navbar-brand mx-auto">S'App Secondo</span>
+        <span class="navbar-brand mx-auto">S'App Secondo - T'arvisio quando arvengo 2024</span>
       </div>
     </nav>
 
