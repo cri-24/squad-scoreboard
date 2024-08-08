@@ -6,12 +6,13 @@ import setTable from '@/assets/set-table.png';
 
 export const useTeamsStore = defineStore('teams', () => {
   const teams = ref([
-    { name: 'Squadra 1', image: squadImage, serviceimage: setTable, service: "Pranzo", members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], leaders: ['Player1', 'Player2', 'Player3'], details: { 'Notturno': 50, 'Giochi acqua': 50, 'Stellone': 50 } },
-    { name: 'Squadra 2', image: squadImage, serviceimage: dishwashing, service: "Colazione", members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], leaders: ['Player1', 'Player2', 'Player3'], details: { 'Game 1': 40, 'Game 2': 30, 'Game 3': 50 } },
-    { name: 'Squadra 3', image: squadImage, serviceimage: setTable, service: "Cena", members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], leaders: ['Player1', 'Player2', 'Player3'], details: { 'Game 1': 40, 'Game 2': 30, 'Game 3': 50 }  },
-    { name: 'Squadra 4', image: squadImage, serviceimage: dishwashing, service: "Cena", members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], leaders: ['Player1', 'Player2', 'Player3'], details: { 'Game 1': 40, 'Game 2': 30, 'Game 3': 50 }  },
-    { name: 'Squadra 5', image: squadImage, serviceimage: setTable, service: "Pranzo", members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], leaders: ['Player1', 'Player2', 'Player3'], details: { 'Game 1': 40, 'Game 2': 30, 'Game 3': 50 } },
-    { name: 'Squadra 6', image: squadImage, serviceimage: setTable, service: "Colazione", members: ['Player1', 'Player2', 'Player3', 'Player4', 'Player5'], leaders: ['Player1', 'Player2', 'Player3'], details: { 'Game 1': 40, 'Game 2': 30, 'Game 3': 50 }  }
+    //TODO: update team name
+    { name: 'Squadra 1', image: squadImage, serviceimage: setTable, service: "Colazione", members: ['Pietro B.', 'Simone P.', 'Maddalena C.', 'Vittorio B.', 'Caterina M.'], leaders: ['Sara', 'Roberto'], details: { 'Game 1': 0 } },
+    { name: 'Squadra 2', image: squadImage, serviceimage: setTable, service: "Pranzo", members: ['Emanuele V.', 'Sara C.', 'Rachele G.', 'Andrea O.', 'Sergio T.'], leaders: ['Miriam T.', 'Michele P.'], details: { 'Game 1': 0 } },
+    { name: 'Squadra 3', image: squadImage, serviceimage: setTable, service: "Cena", members: ['Miriam M.', 'Marta Me.', 'Tommaso B.', 'Chiara DS.', 'Lorenzo B.'], leaders: ['Laura', 'Riccardo'], details: { 'Game 1': 0 }  },
+    { name: 'Squadra 4', image: squadImage, serviceimage: dishwashing, service: "Colazione", members: ['Alessia F.', 'Andrea R.', 'Francesco B.ni', 'Osmeraldo K.', 'Giulia M.', 'Edoardo P.'], leaders: ['Cecilia', 'Matteo S.', 'Cristiana'], details: { 'Game 1': 0 }  },
+    { name: 'Squadra 5', image: squadImage, serviceimage: dishwashing, service: "Pranzo", members: ['Elisa M.', 'Cristiano B.', 'Daniele M.', 'Cristiano C.', 'Elena G.'], leaders: ['Michele M.', 'Elisa', 'Matteo M.'], details: { 'Game 1': 0 } },
+    { name: 'Squadra 6', image: squadImage, serviceimage: dishwashing, service: "Cena", members: ['Leonardo S.', 'Giacomo P.', 'Marta Mo.', 'Bianca V.', 'Gianluca G.', 'Francesco B.lla'], leaders: ['Ludovico', 'Maddalena M.', 'Giordano'], details: { 'Game 1': 0 }  }
   ]);
 
   return { teams };
