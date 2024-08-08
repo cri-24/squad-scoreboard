@@ -47,8 +47,8 @@ const closeModal = () => {
 
 <style scoped>
 .modal-content {
-  font-family: 'Montserrat', sans-serif;
-  width: 700;
+  font-family: 'Mulish', sans-serif;
+  width: 900;
   border-radius: 12px; 
   background-color: #ffffff; 
 }

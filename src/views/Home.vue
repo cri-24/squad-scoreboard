@@ -4,8 +4,7 @@
     <nav class="navbar navbar-dark bg-dark topbar fixed-top">
       <div class="container d-flex justify-content-center align-items-center">
         <span class="navbar-brand text-center" >
-            S'App Secondo<br>
-            T'arvisio quando arvengo 2024
+            S'App Secondo
         </span>
       </div>
     </nav>
@@ -116,8 +115,8 @@ const openRanking = () => {
 <style>
 .home-page {
   display: flex;
-  font-family: 'Montserrat', sans-serif;
-  width: 700;
+  /* font-family: 'Montserrat', sans-serif;
+  width: 700; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -147,14 +146,14 @@ const openRanking = () => {
 }
 
 .navbar-brand {
-  font-family: 'Montserrat', sans-serif;
-  width: 700;
-  font-size: 1.5rem;
+  font-family: 'Mulish', sans-serif;
+  width: 900;
+  font-size: 2.5rem;
   color: #ffffff;
 }
 
 .welcome-text {
-  font-size: 0.875rem; 
+  font-size: 0.7rem; 
   color: #ffffff;
 }
 
@@ -162,8 +161,8 @@ const openRanking = () => {
   flex: 1;
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-  width: 700;
+  font-family: 'Mulish', sans-serif;
+  width: 900;
   justify-content: center;
   align-items: center;
   margin-top: 100px;
@@ -173,14 +172,16 @@ const openRanking = () => {
 }
 
 .welcome-message {
-  font-family: 'Montserrat', sans-serif;
-  width: 700;
+  font-family: 'Mulish', sans-serif;
+  width: 900;
   margin-bottom: 2rem;
   text-align: center;
 }
 
 .card-container {
   display: grid;
+  font-family: 'Mulish', sans-serif;
+  width: 900;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 20px;
   width: 100%;
