@@ -1,7 +1,7 @@
 <template>
   <div :class="['team-card', { 'highlighted': isUserTeam }]" @click="$emit('click')">
     <div class="team-image">
-      <img :src="team.image" alt="Team Image" />
+      <img :src="team.image" alt="Team Image" loading="lazy"/>
     </div>
     <div class="team-info">
       <h3 class="card-title">{{ team.name }}</h3>
@@ -12,7 +12,7 @@
       </button>
       
       <!-- Elemento audio nascosto -->
-      <audio ref="audioRef" :src="team.audio"></audio>
+      <audio ref="audioRef" :src="team.audio" preload="none"></audio>
       
     </div>
   </div>
