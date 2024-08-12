@@ -18,7 +18,7 @@ import audiobellissimissimi from '@/assets/audio/bellissimissimi.m4a';
 export const useTeamsStore = defineStore('teams', () => {
   const teams = ref([
     //TODO: update team name
-    { name: 'I disordinati', image: disordinati, audio: audiodisordinati, serviceimage: dishwashing, service: "Lavare i piatti - Colazione",members: ['Leonardo S.', 'Giacomo P.', 'Marta Mo.', 'Bianca V.', 'Elisa S.', 'Francesco B.lla'], leaders: ['Ludovico', 'Maddalena M.', 'Giordano'], details: { 'Game 1': 0 } },
+    { name: 'I disordinati', image: disordinati, audio: audiodisordinati, serviceimage: dishwashing, service: "Lavare i piatti - Colazione",members: ['Leonardo S.', 'Giacomo P.', 'Marta Mo.', 'Bianca V.', 'Francesco B.lla'], leaders: ['Ludovico', 'Maddalena M.', 'Giordano'], details: { 'Game 1': 0 } },
     { name: 'I bellissimissimi', image: bellissimissimi, audio: audiobellissimissimi, serviceimage: setTable, service: "Apparecchiare/Sparecchiare - Pranzo",members: ['Elena M.', 'Cristiano B.', 'Daniele M.', 'Cristiano C.', 'Elena G.'], leaders: ['Michele M.', 'Elisa', 'Matteo M.'], details: { 'Game 1': 0 } },
     { name: 'Gli zompa-lompa', image: zompalompa, audio: audiozompalompa, serviceimage: dishwashing, service: "Lavare i piatti - Pranzo",members: ['Emanuele V.', 'Sara C.', 'Rachele G.', 'Andrea O.', 'Sergio T.'], leaders: ['Miriam T.', 'Michele P.'], details: { 'Game 1': 0 }  },
     { name: 'I ceppi', image: ceppi, audio: audioceppi, serviceimage: setTable, service: "Apparecchiare/Sparecchiare - Cena", members: ['Miriam M.', 'Marta Me.', 'Tommaso B.', 'Chiara DS.', 'Lorenzo B.'], leaders: ['Laura', 'Riccardo'], details: { 'Game 1': 0 }  },
