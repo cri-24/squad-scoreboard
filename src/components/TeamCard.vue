@@ -31,7 +31,7 @@ const props = defineProps({
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  height: 300px; /* Altezza fissa per uniformare le card */
+  height: 400px; /* Altezza fissa per uniformare le card */
 }
 
 .team-card:hover {
@@ -40,7 +40,7 @@ const props = defineProps({
 }
 
 .team-image {
-  flex: 0 0 80%; /* Occupa l'80% della card */
+  flex: 0 0 90%; /* Occupa l'80% della card */
   overflow: hidden; /* Nasconde parte dell'immagine che esce fuori dalla card */
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -57,7 +57,7 @@ const props = defineProps({
   padding: 10px;
   display: flex;
   justify-content: center; /* Centra il testo orizzontalmente */
-  align-items: center; /* Centra il testo verticalmente */
+  align-items: top; /* Centra il testo verticalmente */
 }
 
 .card-title {
