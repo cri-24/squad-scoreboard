@@ -5,11 +5,23 @@
     </div>
     <div class="team-info">
       <h3 class="card-title">{{ team.name }}</h3>
+      
+      <!-- Icona del megafono per riprodurre l'audio -->
+      <button class="play-audio-btn" @click.stop="playAudio">
+        <i class="bi bi-megaphone-fill"></i>
+      </button>
+      
+      <!-- Elemento audio nascosto -->
+      <audio ref="audioRef" :src="team.audio"></audio>
+      
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+// Props definiti dal componente genitore
 const props = defineProps({
   team: {
     type: Object,
@@ -20,6 +32,17 @@ const props = defineProps({
     default: false
   }
 });
+
+// Funzione per riprodurre l'audio
+const audioRef = ref(null);
+
+const playAudio = () => {
+  if (audioRef.value) {
+    audioRef.value.play().catch(error => {
+      console.error('Errore durante la riproduzione dell\'audio:', error);
+    });
+  }
+};
 </script>
 
 <style scoped>
@@ -58,12 +81,33 @@ const props = defineProps({
   display: flex;
   justify-content: center; /* Centra il testo orizzontalmente */
   align-items: top; /* Centra il testo verticalmente */
+  position: relative;
 }
 
 .card-title {
   color: #333; /* Colore del testo della card */
   font-size: 1.2rem;
   margin: 0;
+}
+
+.play-audio-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffd700;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-audio-btn i {
+  color: #333;
+  font-size: 1.2rem;
 }
 
 .team-card.highlighted {
