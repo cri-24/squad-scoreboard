@@ -19,7 +19,7 @@
           <span class="team-name">{{ team.name }}</span>
         </div>
         <div class="score-container">
-          <span class="badge bg-primary rounded-pill">{{ calculateTotalScore(team.details) }}</span>
+          <span class="badge bg-primary rounded-pill">{{ team.totalScore }}</span>
           <div v-if="showDetails === team.name" class="score-details">
             <div v-for="(detail, game) in team.details" :key="game">{{ game }}: {{ detail }}</div>
           </div>
@@ -42,7 +42,9 @@ const props = defineProps({
 const bgColors = ['light', 'secondary', 'success', 'danger', 'warning', 'info'];
 
 const sortedTeams = computed(() => {
-  return props.teams.slice().sort((a, b) => b.score - a.score);
+  // Ordina i team in base al loro punteggio totale (totalScore) in ordine decrescente
+  console.log("teams: ", props.teams.slice().sort((a, b) => b.totalScore - a.totalScore))
+  return props.teams.slice().sort((a, b) => b.totalScore - a.totalScore);
 });
 
 // Stato per controllare il team per il quale mostrare i dettagli
@@ -58,13 +60,10 @@ const hideScoreDetails = () => {
   showDetails.value = null;
 };
 
-const calculateTotalScore = (details) => {
-  return Object.values(details).reduce((total, score) => total + score, 0);
-};
 </script>
   
 <style scoped>
-
+/* Stili come forniti nel tuo esempio */
   .score-container {
     position: relative;
   }
@@ -157,5 +156,5 @@ const calculateTotalScore = (details) => {
   }
   </style>
   
-  <!-- Bootstrap Icons CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
