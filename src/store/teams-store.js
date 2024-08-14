@@ -25,7 +25,7 @@ export const useTeamsStore = defineStore('teams', () => {
       service: "Lavare i piatti - Pranzo",
       members: ['Leonardo S.', 'Giacomo P.', 'Marta Mo.', 'Bianca V.', 'Francesco B.lla'], 
       leaders: ['Ludovico', 'Maddalena M.', 'Giordano'], 
-      details: { 'Lunedì': 100, 'Testone': 250 },
+      details: { 'Lunedì': 100, 'Testone': 230 },
       totalScore: 0 // Inizialmente 0, verrà calcolato sotto
     },
     { 
