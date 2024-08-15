@@ -22,10 +22,10 @@ export const useTeamsStore = defineStore('teams', () => {
       image: disordinati, 
       audio: audiodisordinati, 
       serviceimage: dishwashing, 
-      service: "Lavare i piatti - Pranzo",
+      service: "Apparecchiare/Sparecchiare - Cena",
       members: ['Leonardo S.', 'Giacomo P.', 'Marta Mo.', 'Bianca V.', 'Francesco B.lla'], 
       leaders: ['Ludovico', 'Maddalena M.', 'Giordano'], 
-      details: { 'Lunedì': 100, 'Testone': 230 },
+      details: { 'Martedì': 330, 'Notturno': 10 },
       totalScore: 0 // Inizialmente 0, verrà calcolato sotto
     },
     { 
@@ -33,10 +33,10 @@ export const useTeamsStore = defineStore('teams', () => {
       image: bellissimissimi, 
       audio: audiobellissimissimi, 
       serviceimage: setTable, 
-      service: "Apparecchiare/Sparecchiare - Cena",
+      service: "Lavare i piatti - Cena",
       members: ['Elena M.', 'Cristiano B.', 'Daniele M.', 'Cristiano C.', 'Elena G.'], 
       leaders: ['Michele M.', 'Elisa', 'Matteo M.'], 
-      details: { 'Lunedì': 150, 'Testone': 250 },
+      details: { 'Martedì': 400, 'Notturno': 20 },
       totalScore: 0 
     },
     { 
@@ -44,10 +44,10 @@ export const useTeamsStore = defineStore('teams', () => {
       image: zompalompa, 
       audio: audiozompalompa, 
       serviceimage: dishwashing, 
-      service: "Lavare i piatti - Cena",
+      service: "Apparecchiare/Sparecchiare - Colazione",
       members: ['Emanuele V.', 'Sara C.', 'Rachele G.', 'Andrea O.', 'Sergio T.'], 
       leaders: ['Miriam T.', 'Michele P.'], 
-      details: { 'Lunedì': 180, 'Testone': 200 },
+      details: { 'Martedì': 380, 'Notturno': 150 },
       totalScore: 0 
     },
     { 
@@ -55,10 +55,10 @@ export const useTeamsStore = defineStore('teams', () => {
       image: ceppi, 
       audio: audioceppi, 
       serviceimage: setTable, 
-      service: "Apparecchiare/Sparecchiare - Colazione", 
+      service: "Lavare i piatti - Colazione", 
       members: ['Miriam M.', 'Marta Me.', 'Tommaso B.', 'Chiara DS.', 'Lorenzo B.'], 
       leaders: ['Laura', 'Riccardo'], 
-      details: { 'Lunedì': 180, 'Testone': 300 },
+      details: { 'Martedì': 480, 'Notturno': 40 },
       totalScore: 0 
     },
     { 
@@ -66,10 +66,10 @@ export const useTeamsStore = defineStore('teams', () => {
       image: bearsdanger, 
       audio: audiobearsdanger, 
       serviceimage: dishwashing, 
-      service: "Lavare i piatti - Colazione", 
+      service: "Apparecchiare/Sparecchiare - Pranzo", 
       members: ['Alessia F.', 'Andrea R.', 'Francesco B.ni', 'Osmeraldo K.', 'Giulia M.', 'Edoardo P.'], 
       leaders: ['Cecilia', 'Matteo S.', 'Cristiana'], 
-      details: { 'Lunedì': 170, 'Testone': 200 },
+      details: { 'Martedì': 370, 'Notturno': 80 },
       totalScore: 0 
     },
     { 
@@ -77,10 +77,10 @@ export const useTeamsStore = defineStore('teams', () => {
       image: bacapamomba, 
       audio: audiobacapamomba, 
       serviceimage: setTable, 
-      service: "Apparecchiare/Sparecchiare - Pranzo", 
+      service: "Lavare i piatti - Pranzo", 
       members: ['Pietro B.', 'Simone P.', 'Maddalena C.', 'Vittorio B.', 'Caterina M.'], 
       leaders: ['Sara', 'Roberto'], 
-      details: { 'Lunedì': 90, 'Testone': 150 },
+      details: { 'Martedì': 240, 'Notturno': 100 },
       totalScore: 0 
     }
   ]);
