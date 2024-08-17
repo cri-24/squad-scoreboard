@@ -25,7 +25,7 @@ export const useTeamsStore = defineStore('teams', () => {
       service: "Apparecchiare/Sparecchiare - Cena",
       members: ['Leonardo S.', 'Giacomo P.', 'Marta Mo.', 'Bianca V.', 'Francesco B.lla'], 
       leaders: ['Ludovico', 'Maddalena M.', 'Giordano'], 
-      details: { 'Martedì': 340, 'Acqua': 10, 'Giallo': 200 },
+      details: { 'Lun-Giov': 340, 'Acqua': 10, 'Giallo': 200 },
       totalScore: 0 // Inizialmente 0, verrà calcolato sotto
     },
     { 
@@ -36,7 +36,7 @@ export const useTeamsStore = defineStore('teams', () => {
       service: "Lavare i piatti - Cena",
       members: ['Elena M.', 'Cristiano B.', 'Daniele M.', 'Cristiano C.', 'Elena G.'], 
       leaders: ['Michele M.', 'Elisa', 'Matteo M.'], 
-      details: { 'Martedì': 420, 'Acqua': 60, 'Giallo': 140 },
+      details: { 'Lun-Giov': 420, 'Acqua': 60, 'Giallo': 140 },
       totalScore: 0 
     },
     { 
@@ -47,7 +47,7 @@ export const useTeamsStore = defineStore('teams', () => {
       service: "Apparecchiare/Sparecchiare - Colazione",
       members: ['Emanuele V.', 'Sara C.', 'Rachele G.', 'Andrea O.', 'Sergio T.'], 
       leaders: ['Miriam T.', 'Michele P.'], 
-      details: { 'Martedì': 530, 'Acqua': 40, 'Giallo': 250 },
+      details: { 'Lun-Giov': 530, 'Acqua': 40, 'Giallo': 250 },
       totalScore: 0 
     },
     { 
@@ -58,7 +58,7 @@ export const useTeamsStore = defineStore('teams', () => {
       service: "Lavare i piatti - Colazione", 
       members: ['Miriam M.', 'Marta Me.', 'Tommaso B.', 'Chiara DS.', 'Lorenzo B.'], 
       leaders: ['Laura', 'Riccardo'], 
-      details: { 'Martedì': 520, 'Acqua': 20, 'Giallo': 200},
+      details: { 'Lun-Giov': 520, 'Acqua': 20, 'Giallo': 200},
       totalScore: 0 
     },
     { 
@@ -69,7 +69,7 @@ export const useTeamsStore = defineStore('teams', () => {
       service: "Apparecchiare/Sparecchiare - Pranzo", 
       members: ['Alessia F.', 'Andrea R.', 'Francesco B.ni', 'Osmeraldo K.', 'Giulia M.', 'Edoardo P.'], 
       leaders: ['Cecilia', 'Matteo S.', 'Cristiana'], 
-      details: { 'Martedì': 450, 'Acqua': 80, 'Giallo': 140},
+      details: { 'Lun-Giov': 450, 'Acqua': 80, 'Giallo': 140},
       totalScore: 0 
     },
     { 
@@ -80,7 +80,7 @@ export const useTeamsStore = defineStore('teams', () => {
       service: "Lavare i piatti - Pranzo", 
       members: ['Pietro B.', 'Simone P.', 'Maddalena C.', 'Vittorio B.', 'Caterina M.'], 
       leaders: ['Sara', 'Roberto'], 
-      details: { 'Martedì': 340, 'Acqua': 100, 'Giallo': 180 },
+      details: { 'Lun-Giov': 340, 'Acqua': 100, 'Giallo': 180 },
       totalScore: 0 
     }
   ]);
